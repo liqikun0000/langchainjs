@@ -8245,7 +8245,7 @@ __metadata:
     llmonitor: ^0.5.9
     lodash: ^4.17.21
     lunary: ^0.6.11
-    mongodb: ^5.2.0
+    mongodb: ^5.8.0
     mysql2: ^3.3.3
     neo4j-driver: ^5.12.0
     node-llama-cpp: 2.7.3
@@ -8331,7 +8331,7 @@ __metadata:
     llmonitor: ^0.5.9
     lodash: ^4.17.21
     lunary: ^0.6.11
-    mongodb: ^5.2.0
+    mongodb: ^5.8.0
     mysql2: ^3.3.3
     neo4j-driver: "*"
     node-llama-cpp: "*"
@@ -8761,6 +8761,15 @@ __metadata:
     axios: ^1.6.2
     axios-retry: ^4.0.0
   checksum: 9eee2c7578d7a2c2da43d00d41b71d26192147946fe7df99521c0aa673c5700e9b237ee4ea7d11dafffce0f6fa237d639ff757753d20776276636563697deb0f
+  languageName: node
+  linkType: hard
+
+"@mongodb-js/saslprep@npm:^1.1.0":
+  version: 1.1.8
+  resolution: "@mongodb-js/saslprep@npm:1.1.8"
+  dependencies:
+    sparse-bitfield: ^3.0.3
+  checksum: 259fda7ec913b5e63f102ae18840ef0d811c4a50919bbc437bd0452980806d640cd06c36076ed1655f1581ef24cd7316be0671f4b7429e7c97c7066524d2dbee
   languageName: node
   linkType: hard
 
@@ -15010,10 +15019,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bson@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "bson@npm:5.2.0"
-  checksum: 1297f8776a05fe3c03b5a1c73210389bc3e596ee6f1e772b76c021fff5537d0c91e523462ba196a8a839246613a87cffbd6486d387a849c7de7cde64d1af7812
+"bson@npm:^5.5.0":
+  version: 5.5.1
+  resolution: "bson@npm:5.5.1"
+  checksum: f49730504e8362e2c8d1eb0c272e5e125392c41fb7196fc35ccbc39718ee62569a1d197bd2342c3334cd420073d3fd5dc7dea764a7f219dcd79e0ce473dd2772
   languageName: node
   linkType: hard
 
@@ -19105,7 +19114,7 @@ __metadata:
     js-yaml: ^4.1.0
     langchain: "workspace:*"
     ml-distance: ^4.0.0
-    mongodb: ^5.2.0
+    mongodb: ^5.8.0
     pg: ^8.11.0
     pickleparser: ^0.2.1
     prettier: ^2.8.3
@@ -23694,7 +23703,7 @@ __metadata:
     langsmith: ~0.0.48
     mammoth: ^1.5.1
     ml-distance: ^4.0.0
-    mongodb: ^5.2.0
+    mongodb: ^5.8.0
     node-llama-cpp: 2.7.3
     notion-to-md: ^3.1.0
     officeparser: ^4.0.4
@@ -23756,7 +23765,7 @@ __metadata:
     ioredis: ^5.3.2
     jsdom: "*"
     mammoth: ^1.6.0
-    mongodb: ^5.2.0
+    mongodb: ^5.8.0
     node-llama-cpp: "*"
     notion-to-md: ^3.1.0
     officeparser: ^4.0.4
@@ -25293,29 +25302,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "mongodb@npm:5.2.0"
+"mongodb@npm:^5.8.0":
+  version: 5.9.2
+  resolution: "mongodb@npm:5.9.2"
   dependencies:
-    bson: ^5.2.0
+    "@mongodb-js/saslprep": ^1.1.0
+    bson: ^5.5.0
     mongodb-connection-string-url: ^2.6.0
-    saslprep: ^1.0.3
     socks: ^2.7.1
   peerDependencies:
-    "@aws-sdk/credential-providers": ^3.201.0
-    mongodb-client-encryption: ^2.3.0
+    "@aws-sdk/credential-providers": ^3.188.0
+    "@mongodb-js/zstd": ^1.0.0
+    kerberos: ^1.0.0 || ^2.0.0
+    mongodb-client-encryption: ">=2.3.0 <3"
     snappy: ^7.2.2
   dependenciesMeta:
-    saslprep:
+    "@mongodb-js/saslprep":
       optional: true
   peerDependenciesMeta:
     "@aws-sdk/credential-providers":
+      optional: true
+    "@mongodb-js/zstd":
+      optional: true
+    kerberos:
       optional: true
     mongodb-client-encryption:
       optional: true
     snappy:
       optional: true
-  checksum: 2114175fab6a56c2d2902d97117c98c7b240155af6b7880174dbdf90bdcd8eb60c959ced7ed8b6327abfe226d6ae9933356344fc7d6e71798fef86e6eddd0173
+  checksum: fad5621f4a9764d71c48f2955be57925e506b14a4a63c5b9209ff733a58b2524cf9c87f216f2f02de092fab20eaa033ff5ade45c5cfa7f1c8c6bce114cb22e3f
   languageName: node
   linkType: hard
 
@@ -29524,15 +29539,6 @@ __metadata:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
-  languageName: node
-  linkType: hard
-
-"saslprep@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "saslprep@npm:1.0.3"
-  dependencies:
-    sparse-bitfield: ^3.0.3
-  checksum: 4fdc0b70fb5e523f977de405e12cca111f1f10dd68a0cfae0ca52c1a7919a94d1556598ba2d35f447655c3b32879846c77f9274c90806f6673248ae3cea6ee43
   languageName: node
   linkType: hard
 
